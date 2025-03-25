@@ -1,0 +1,1114 @@
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>youtube replica.com</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <style>
+          p{
+            font-family: Roboto, Arial;
+            margin-top:0 ;
+            margin-bottom: 0;
+          }
+          body{
+            margin: 0;
+            padding-top: 80px;
+            padding-left: 96px;
+            padding-right: 24px;
+            height: 3000px;
+            background-color: rgb(252, 248, 248);
+          }
+          .header{
+            height: 55px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: white;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-bottom-width:1px ;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(104, 97, 97);
+
+            
+          }
+
+          .left-section{
+            display: flex;
+            align-items: center;
+
+          }
+          .middle-section{
+            flex: 1;
+            margin-left: 70px;
+            margin-right: 35px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+          }
+          .right-section{
+            width: 180px;
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            margin-right: 20px;
+            flex-shrink: 0;
+          }
+          .thumbnail{
+            width: 100%;
+          
+          }
+          .search-bar{
+            flex: 1;
+            height: 36px;
+            padding-left: 10px;
+            font-size: 16px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: gray;
+            border-radius: 2px;
+            box-shadow: inset 1px 2px 3px rgb(0, 0, 0, 0.15);
+            width: 0;
+          }
+          .search-bar::placeholder{
+            font-family: Roboto, Arial;
+            font-size: 16px;
+
+          }
+          .video-title{
+      margin-top: 0;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 10px;
+          }
+          .video-preview{
+          
+          
+          }
+          .channel-picture{
+  ;
+          }
+          .video-info{
+    
+
+
+          }
+          .profile-picture{
+    width: 36px;
+  border-radius: 50px;
+          }
+          .video-title{
+            margin-top: 0;
+          }
+          .thumbnail-row{
+            margin-bottom: 8px;
+            position: relative;
+          }
+          .video-aurthor,
+          .video-stats{
+            font-size: 12px;
+            color: rgb(96, 96, 90);
+          }
+          .video-aurthor{
+            margin-bottom: 4px;
+          }
+
+          .video-info-grid{
+            display: grid;
+            grid-template-columns: 50px 1fr;
+          }
+
+          .video-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 15px;
+            row-gap: 40px;
+          }
+          .hamburger{
+            height: 24px;
+            margin-left: 24px;
+            margin-right: 20px;
+
+          }
+          .youtube-logo{
+            height: 20px;
+          }
+
+          .seacrh-icon{
+            height: 20px;
+            margin-top: 4px;
+          }
+          .vioce-search-button{
+            height: 40px;
+            width: 40px;
+            border-radius: 20px;
+            border: none;
+          }
+          .vioce-search{
+            height: 25px;
+            margin-top: 4px;
+            background-color:rgb(240, 240, 240);
+            position: relative;
+          }
+          .vioce-search-button .tool{
+            position: absolute;
+            background-color: gray;
+            color: white;
+            padding-left: 1px;
+            padding-right: 1px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-radius: 2px;
+            font-size: 12px;
+            bottom: 0;
+            left: -12;
+            opacity: 0;
+            pointer-events: none;
+          }
+          .vioce-search-button:hover .tool{
+            opacity: 1;
+            transition: opacity 0.5s;
+          }
+          
+          .search-button{
+            height: 40px;
+            width: 66px;
+            background-color: rgb(240, 240, 240);
+            border-width: 1px;
+            border-style: solid;
+            border-color:rgb(185, 178, 178); 
+            margin-left: -1px;
+            margin-right: 10px;
+            position: relative;
+          }
+          .search-button .tooltip{
+            position: absolute;
+            background-color: gray;
+            color: white;
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-radius: 4px;
+            font-size: 12px;
+            bottom: -30;
+            right: 0;
+            opacity: 0;
+            pointer-events: none;
+          }
+          .search-button:hover .tooltip{
+            opacity: 1;
+            transition: opacity 0.5s;
+          }
+
+          .upload-icon{
+            height: 24px;
+          }
+          .youtube-apps{
+            height: 24px;
+          }
+          .notification{
+            height: 24px;
+          }
+          .notification-container{
+  position: relative;
+          }
+          .notification-count{
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background-color: rgb(148, 19, 19);
+            color: white;
+            font-family: Roboto, Arial;
+            font-size: 11px;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            border-radius: 10px;
+          }
+          .user-pic{
+            height: 32px;
+            border-radius: 16px;
+          }
+          .sidebar{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 50px;
+            background-color:white;
+            width: 72px;
+            z-index: 200;
+            padding-top: 5px;
+          }
+          .sidebar-link{
+            height: 76px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+          }
+          .sidebar-link:hover{
+            background-color: rgb(196, 190, 190);
+          }
+          .sidebar-link img{
+            height: 24px;
+            margin-bottom: 4px;
+          }
+          .sidebar-link div{
+            font-family: Roboto, Arial;
+            font-size: 12px;
+
+          }
+          .video-time{
+            font-family: Roboto, Arial;
+            font-size: 12px;
+            padding-left: 4px;
+            padding-right: 4px;  
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-radius: 2px;
+            background-color:black;
+            color: white;
+            position: absolute;
+            bottom: 9px;
+            right: 5px;
+          }
+          
+      
+        </style>
+      </head>
+      <body >
+        <div class="header">
+          <div class="left-section">
+              
+              <img class="hamburger" src="icons/hamburger-menu.svg">
+              <img class="youtube-logo" src="icons/youtube-logo.svg">
+          </div>
+          <div class="middle-section">
+            <input class="search-bar" type="text" placeholder="search">
+            <button class="search-button">
+              <img class="seacrh-icon" src="icons/search.svg">
+              <div class="tooltip">search</div>
+            </button>
+            <button class="vioce-search-button">
+              <img class="voice-search" src="icons/voice-search-icon.svg">
+              <div class="tool">voice</div>
+            </button>
+          </div>
+          <div class="right-section">
+            <img class="upload-icon" src="icons/upload.svg">
+            <img class="youtube-apps" src="icons/youtube-apps.svg">
+            
+            <div class="notification-container"><img class="notification" src="icons/notifications.svg">
+              <div class="notification-count">3</div></div>
+            
+            <img class="user-pic" src="channel-pictures/down-234.jpg">
+          </div>
+        
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-link">
+            <img class="side-icon" src="icons/home.svg">
+            <div>home</div>
+          </div>
+          <div class="sidebar-link">
+            <img class="side-icon" src="icons/explore.svg">
+            <div>explore</div>
+          </div>
+          <div class="sidebar-link">
+            <img class="side-icon" src="icons/subscriptions.svg">
+            <div>subscriptions</div>
+          </div>
+          <div class="sidebar-link">
+            <img class="side-icon" src="icons/originals.svg">
+            <div>originals</div>
+          </div>
+          <div class="sidebar-link">
+            <img class="side-icon" src="icons/youtube-music.svg">
+            <div class="music">youtube music</div>
+          </div>
+          <div class="sidebar-link">
+            <img class="side-icon" src="icons/library.svg">
+            <div>library</div>
+          </div>
+        </div>
+      
+      
+        <div class="video-grid">
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/thumbnail-1.webp">
+              
+              <div class="video-time">14:20</div>
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-1.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Talking Tech and AI with Google CEO 
+                  Sundar Pichai!
+                </p>
+                <p class="video-aurthor">
+              Marques Brownlee
+                </p>
+                <p class="video-stats">
+                  3.4M views · 6 months ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/thumbnail-2.webp">
+              <div class="video-time">8:22</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-2.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Try Not To Laugh Challenge #9
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/thumbnail-3.webp">
+              <div class="video-time">9:13</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-3.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Engaging intaractively 1
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/thumbnail-4.webp">
+              <div class="video-time">22:09</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-4.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Need for insight
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/thumbnail-5.webp">
+              <div class="video-time">11:17</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-5.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  thumbnails reasearch
+                </p>
+                <p class="video-aurthor">
+                  Eric
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/thumbnail-6.webp">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  football Challenge
+                </p>
+                <p class="video-aurthor">
+                  Mark guehi
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-1.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Enriching lives
+                </p>
+                <p class="video-aurthor">
+                  The mode
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-2.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                mauncheglagback
+                </p>
+                <p class="video-aurthor">
+                  augnstruaum
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-4.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Diesny world
+                </p>
+                <p class="video-aurthor">
+                  D.K
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-5.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  HOPE FOR THE BATRLE
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-6.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Attack on titans
+                </p>
+                <p class="video-aurthor">
+                  levi
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-7.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  sakamoto days
+                </p>
+                <p class="video-aurthor">
+                  meangine
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-8.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  blessings and zero
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/download-9.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  leave it on me 
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-12.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Try Not To Laugh Challenge #9
+                </p>
+                <p class="video-aurthor">
+                  frank sinatra
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-13.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  ishawspeed rules youtube
+                </p>
+                <p class="video-aurthor">
+                  speedy
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-14.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  fifty shades of grey
+                </p>
+                <p class="video-aurthor">
+                  grey
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-15.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  marks challenge to friends
+                </p>
+                <p class="video-aurthor">
+                  Markiee
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-16.png">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                nothing funny about sharks
+                </p>
+                <p class="video-aurthor">
+                  nat geo
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-18.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  just for laughs gags
+                </p>
+                <p class="video-aurthor">
+                  comedy central
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-19.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Nintendo switch
+                </p>
+                <p class="video-aurthor">
+                  ninja
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-20.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  moere like mario and luigi
+                </p>
+                <p class="video-aurthor">
+                  Super mario
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-21.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                dispicable me
+                </p>
+                <p class="video-aurthor">
+                  Gru
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-22.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Twilight saga moon 2
+                </p>
+                <p class="video-aurthor">
+                johnny
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-23.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Independce, relieved from slavery
+                </p>
+                <p class="video-aurthor">
+                  Momsory
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-24.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  legit homes in youtube wars
+                </p>
+                <p class="video-aurthor">
+                  link media
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-25.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  judge mental the series
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-26.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  YES FINALLY MADE IT
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-27.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Beast games final stage season3
+                </p>
+                <p class="video-aurthor">
+                  mr beast
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-28.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Try Not To Laugh Challenge #9
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-29.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  Big brother naija season finale
+                </p>
+                <p class="video-aurthor">
+                  Biggie
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-30.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                lives of the wives of LA
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-preview">
+            <div class="thumbnail-row">
+              <img  class="thumbnail" src="thumbnails/images-31.jpg">
+              <div class="video-time">19:59</div>
+        
+            </div>
+            <div class="video-info-grid">
+              <div class="channel-picture">
+                <img class="profile-picture"src="channel-pictures/channel-6.jpeg">
+              </div>
+              <div class="video-info">
+                <p class="video-title">
+                  danger in paradise
+                </p>
+                <p class="video-aurthor">
+                  Markiplier
+                </p>
+                <p class="video-stats">
+  19M views · 4 years ago</p>
+              </div>
+            </div>
+          </div>
+          
+        
+        </div>
+        
+      </body>
+      </html>
